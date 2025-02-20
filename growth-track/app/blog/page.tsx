@@ -32,7 +32,7 @@ export default function Blog() {
               ))}
             </div>
             <Link
-              href={"/blog/" + post.id}
+              href={"/blog/" + post.slug}
               className="w-[115px] text-center mt-auto px-4 py-2 bg-lime-600 text-white rounded-lg hover:bg-lime-700 transition"
             >
               Read More

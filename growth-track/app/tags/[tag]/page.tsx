@@ -34,7 +34,7 @@ export default async function TagPage({ params }: TagPageProps) {
               {post.content.substring(0, 150)}...
             </p>
             <Link
-              href={`/blog/${post.id}`}
+              href={`/blog/${post.slug}`}
               className="inline-block mt-4 px-4 py-2 bg-lime-600 text-white rounded-lg hover:bg-lime-700 transition"
             >
               Read More
