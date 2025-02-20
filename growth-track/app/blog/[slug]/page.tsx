@@ -4,12 +4,11 @@ import Link from "next/link";
 import posts from "@/lib/blogData.json";
 
 interface BlogPostProps {
-  params: Promise<{ id: string }>;
+  params: { slug: string };
 }
 
-export default async function BlogPost({ params }: BlogPostProps) {
-  const resolvedParams = await params;
-  const post = posts.find((p) => p.id.toString() === resolvedParams.id);
+export default function BlogPost({ params }: BlogPostProps) {
+  const post = posts.find((p) => p.id.toString() === params.slug);
 
   if (!post) return notFound();
 
