@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import posts from "@/lib/blogData.json";
 
 interface TagPageProps {
@@ -23,7 +24,7 @@ export default async function TagPage({ params }: TagPageProps) {
             key={post.id}
             className="mb-8 p-4 bg-gray-700 rounded-lg shadow-md"
           >
-            <img
+            <Image
               src={post.image}
               alt={post.title}
               className="w-full h-48 object-cover rounded-lg"
