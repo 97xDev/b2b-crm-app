@@ -2,11 +2,12 @@ import Link from "next/link";
 import posts from "@/lib/blogData.json";
 
 interface TagPageProps {
-  params: { tag: string };
+  params: Promise<{ tag: string }>;
 }
 
-export default function TagPage({ params }: TagPageProps) {
-  const tag = decodeURIComponent(params.tag);
+export default async function TagPage({ params }: TagPageProps) {
+  const resolvedParams = await params;
+  const tag = decodeURIComponent(resolvedParams.tag);
   const filteredPosts = posts.filter((post) => post.tags?.includes(tag));
 
   return (
