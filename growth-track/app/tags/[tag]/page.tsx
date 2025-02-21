@@ -27,6 +27,8 @@ export default async function TagPage({ params }: TagPageProps) {
             <Image
               src={post.image}
               alt={post.title}
+              width={600}
+              height={600}
               className="w-full h-48 object-cover rounded-lg"
             />
             <h2 className="text-2xl font-bold mt-4">{post.title}</h2>

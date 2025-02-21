@@ -1,12 +1,18 @@
 import internalLinks from "@/lib/internalLinks.json";
 
 export function addInternalLinks(content: string) {
+  const linkedKeywords = new Set<string>(); // Keep track of linked keywords
+
   Object.entries(internalLinks).forEach(([keyword, url]) => {
-    // Use a case-insensitive regex to find standalone words
-    const regex = new RegExp(`\\b(${keyword})\\b(?![^<]*>)`, "gi");
+    // Only replace the FIRST occurrence of each keyword
+    const regex = new RegExp(`\\b(${keyword})\\b(?![^<]*>)`, "i"); // Case-insensitive
 
     content = content.replace(regex, (match) => {
-      return `<a href="${url}" class="text-lime-400 hover:underline">${match}</a>`;
+      if (!linkedKeywords.has(keyword)) {
+        linkedKeywords.add(keyword);
+        return `<a href="${url}" class="text-lime-400 hover:underline">${match}</a>`;
+      }
+      return match; // Leave later occurrences unlinked
     });
   });
 
