@@ -46,41 +46,33 @@ export default async function BlogPost({ params }: BlogPostProps) {
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
           components={{
-            h1: ({ node, ...props }) => (
+            h1: (props) => (
               <h1 className="text-4xl font-bold mt-6" {...props} />
             ),
-            h2: ({ node, ...props }) => (
+            h2: (props) => (
               <h2
                 className="text-3xl font-semibold mt-6 text-gray-300"
                 {...props}
               />
             ),
-            h3: ({ node, ...props }) => (
+            h3: (props) => (
               <h3
                 className="text-2xl font-semibold mt-4 text-gray-400"
                 {...props}
               />
             ),
-            p: ({ node, ...props }) => (
+            p: (props) => (
               <p className="text-gray-300 mt-2 leading-relaxed" {...props} />
             ),
-            ul: ({ node, ...props }) => (
+            ul: (props) => (
               <ul
                 className="list-disc list-inside mt-2 space-y-1 text-gray-300"
                 {...props}
               />
             ),
-            li: ({ node, ...props }) => (
-              <li className="ml-4 text-gray-300" {...props} />
-            ),
-            a: ({ node, ...props }) => (
+            li: (props) => <li className="ml-4 text-gray-300" {...props} />,
+            a: (props) => (
               <a className="text-lime-400 hover:underline" {...props} />
-            ),
-            blockquote: ({ node, ...props }) => (
-              <blockquote
-                className="border-l-4 border-gray-500 pl-4 italic text-gray-400"
-                {...props}
-              />
             ),
           }}
         >
