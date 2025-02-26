@@ -52,7 +52,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
         <Image
           src={post.image}
           alt={post.title}
-          layout="fill"
+          fill={true}
           objectFit="cover"
           className="opacity-70"
         />
