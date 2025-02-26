@@ -4,9 +4,9 @@ import posts from "@/lib/blogData.json";
 
 export default function Blog() {
   return (
-    <div className="max-w-7xl mx-auto">
-      <h1 className="text-4xl font-bold text-center text-lime-400">
-        The Growth Blog
+    <div className="flex flex-col gap-4 max-w-7xl mx-auto">
+      <h1 className="text-4xl font-bold text-left text-gray-200">
+        The GrowthTrack blog for managing business relationships.
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 auto-rows-fr">
         {posts.map((post) => (

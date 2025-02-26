@@ -158,13 +158,13 @@ export default async function BlogPost({ params }: BlogPostProps) {
         {/* Right Column - Table of Contents (Hidden on Mobile, Sticky on Desktop) */}
         <aside className="hidden md:block md:w-1/4">
           <div className="bg-gray-800 p-4 rounded-lg shadow-lg sticky top-24">
-            <h3 className="text-lg font-bold mb-2 text-lime-400">
+            <h3 className="text-lg font-bold mb-2 text-gray-200">
               Table of Contents <hr className="pb-2" />
             </h3>
             <ul className="text-gray-300 space-y-2">
               {tocHeadings.map((heading, index) => (
                 <li key={heading.id} className="flex items-start">
-                  <span className="mr-2 text-lime-400 font-bold">
+                  <span className="mr-2 text-white font-bold">
                     {index + 1}.
                   </span>
                   <a
