@@ -6,8 +6,8 @@ export default function Contact() {
           Contact Sales
         </h2>
         <p className="mt-2 text-lg text-gray-400">
-          Have questions? Fill out the form below and we'll get back to you as
-          soon as possible.
+          Have questions? Fill out the form below and we&apos;ll get back to you
+          as soon as possible.
         </p>
       </div>
       <form
@@ -120,7 +120,7 @@ export default function Contact() {
             type="submit"
             className="w-full rounded-md bg-lime-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-md transition hover:bg-lime-700 focus:ring-2 focus:ring-lime-600"
           >
-            Let's Talk
+            Let&apos;s Talk
           </button>
         </div>
       </form>
